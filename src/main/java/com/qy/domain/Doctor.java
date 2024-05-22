@@ -15,4 +15,6 @@ public class Doctor {
     private String direction;//擅长方向
     private String position;//职位
     private String status;//挂号状态
+    private String username;//账号
+    private String password;//密码
 }

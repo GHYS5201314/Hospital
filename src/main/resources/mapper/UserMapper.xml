@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qy.mapper.UserMapper">
+    <insert id="insert">
+        insert into user values(#{username},#{password},#{role},#{name});
+    </insert>
     <update id="updata">
         update user set password=#{password},identity=#{identity} where username=#{username};
     </update>
     <select id="findAll" resultType="com.qy.domain.User">
-        select * from user
+        select * from user;
+    </select>
+    <select id="findByName" resultType="com.qy.domain.User">
+        select * from user where username=#{username};
     </select>
 </mapper>

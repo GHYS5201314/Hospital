@@ -23,10 +23,4 @@ public class SystemUserServiceImpl implements SystemUserService {
         User loginuser = systemUserMapper.login(systemuser);
         return loginuser;
     }
-
-    @Override
-    public Integer doctor1Enroll(Doctor doctor) {
-        System.out.println("doctor1Enroll");
-        return doctorService.doctor1Enroll(doctor);
-    }
 }

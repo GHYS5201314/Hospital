@@ -1,6 +1,7 @@
 package com.qy.service.impl;
 
 import com.qy.domain.Doctor;
+import com.qy.domain.DoctorProperties;
 import com.qy.domain.ResponseResult;
 import com.qy.mapper.DoctorMapper;
 import com.qy.service.DoctorService;
@@ -30,4 +31,15 @@ public class DoctorServiceImpl implements DoctorService {
         Doctor doctor = doctorMapper.findByName(name);
         return doctor;
     }
+
+    @Override
+    public void update(DoctorProperties doctorProperties) {
+        doctorMapper.update(doctorProperties);
+    }
+
+    @Override
+    public void add(String name) {
+
+    }
+
 }

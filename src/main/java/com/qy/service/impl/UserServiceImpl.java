@@ -22,4 +22,15 @@ public class UserServiceImpl implements UserService {
     public void updata(User user) {
         userMapper.updata(user);
     }
+
+    @Override
+    public void insert(String username, String password,String role,String name) {
+        userMapper.insert(username,password,role,name);
+    }
+
+    @Override
+    public User findbyusername(String username) {
+        User user=userMapper.findByName(username);
+        return user;
+    }
 }

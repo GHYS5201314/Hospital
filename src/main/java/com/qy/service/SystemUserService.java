@@ -8,6 +8,5 @@ import com.qy.domain.SystemUser;
 public interface SystemUserService {
 
     public User login(SystemUser systemuser);
-    public Integer doctor1Enroll(Doctor doctor);
 
 }

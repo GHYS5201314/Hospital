@@ -11,4 +11,6 @@ import java.util.List;
 public interface UserMapper {
     List<User> findAll();
     void updata(User user);
+    User findByName(String username);
+    void insert(String username,String password,String role,String name);
 }
