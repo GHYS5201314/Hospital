@@ -7,6 +7,9 @@
     <insert id="addproperties">
         insert into doctorproperties values(#{name},null,null,null,null);
     </insert>
+    <insert id="add">
+        insert into doctorproperties values(#{name},null,null,null,null,null,'未预约')
+    </insert>
     <update id="update">
         update doctorproperties set registerdName=#{registerdName},cost=#{cost},DateStartTime=#{DateStartTime},DateEndTime=#{DateEndTime} where name=#{doctorName};
     </update>
@@ -15,5 +18,11 @@
     </select>
     <select id="findByName" resultType="com.qy.domain.Doctor">
         select * from doctor where name=#{name}
+    </select>
+    <select id="findAll2" resultType="com.qy.domain.DoctorProperties">
+        select * from DoctorProperties
+    </select>
+    <select id="getProperties" resultType="java.util.Properties">
+        select * from doctorProperties where doctorName=#{name}
     </select>
 </mapper>

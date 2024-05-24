@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Properties;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
@@ -38,8 +39,19 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public void add(String name) {
+    public void addproperties(String name) {
+        doctorMapper.addproperties(name);
+    }
 
+    @Override
+    public Properties getproperties(String name) {
+        return doctorMapper.getProperties(name);
+    }
+
+    @Override
+    public List<DoctorProperties> findAll2() {
+        List<DoctorProperties>doctorProperties= doctorMapper.findAll2();
+        return doctorProperties;
     }
 
 }

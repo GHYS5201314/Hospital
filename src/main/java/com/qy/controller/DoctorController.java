@@ -28,6 +28,16 @@ public class DoctorController {
             return new ResponseResult(300,"当前无医生信息！");
         }
     }
+    @RequestMapping("findAll2")
+    ResponseResult findAll2(){
+        List<DoctorProperties>doctorProperties=doctorService.findAll2();
+        String msg;
+        if(doctorProperties!=null){
+            return new ResponseResult(200,"查找成功",doctorProperties);
+        }else{
+            return new ResponseResult(300,"当前无医生信息！");
+        }
+    }
     @RequestMapping("/update")
     ResponseResult update(@RequestBody DoctorProperties doctorProperties){
         doctorService.update(doctorProperties);

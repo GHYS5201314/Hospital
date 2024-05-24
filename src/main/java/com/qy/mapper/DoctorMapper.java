@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Properties;
+
 @Mapper
 @Repository
 public interface DoctorMapper {
@@ -14,4 +16,7 @@ public interface DoctorMapper {
     Integer doctor1Enroll(Doctor doctor);
     void update(DoctorProperties doctorProperties);
     void addproperties(String name);
+
+    List<DoctorProperties> findAll2();
+    Properties getProperties(String name);
 }

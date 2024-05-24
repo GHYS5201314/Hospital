@@ -57,6 +57,7 @@ public class SystemUserController {
         }
         doctorService.doctor1Enroll(doctor);
         userService.insert(doctor.getUsername(),doctor.getPassword(),"doctor",doctor.getName());
+        doctorService.addproperties(doctor.getName());
         return new ResponseResult(200,"注册成功！",doctor2);
     }
     @PostMapping("/patientEnroll")
