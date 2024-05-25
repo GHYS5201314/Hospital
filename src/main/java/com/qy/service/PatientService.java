@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface PatientService {
 
-    public Integer insert(Patient patient);
-    public Patient findByName(String name);
+    Integer insert(Patient patient);
+    Patient findByName(String name);
+    Patient findByUsername(String username);
 }

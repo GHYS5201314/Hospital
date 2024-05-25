@@ -7,4 +7,7 @@
     <select id="findByName" resultType="com.qy.domain.Patient">
         select * from patient where name=#{name};
     </select>
+    <select id="findByUsername" resultType="com.qy.domain.Patient">
+        select * from patient where username=#{username}
+    </select>
 </mapper>

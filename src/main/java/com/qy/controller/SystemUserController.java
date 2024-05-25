@@ -34,9 +34,12 @@ public class SystemUserController {
         System.out.println("login");
         Map<String,Object> map=new HashMap<>();
         User loginuser = systemUserService.login(systemuser);
+        String name;
         if(loginuser!=null){
             String token = JwtUtil.createJWT(UUID.randomUUID().toString(), loginuser.getUsername(), null);
+            name=loginuser.getName();
             map.put("token",token);
+            map.put("name",name);
         }else{
             return new ResponseResult(300,"用户名或密码或身份错误，请重新登录！");
         }
@@ -46,7 +49,6 @@ public class SystemUserController {
         else{
             return new ResponseResult(200,"登录成功！",map);
         }
-
     }
     @PostMapping("/doctor1Enroll")
     public ResponseResult doctor1enroll(@RequestBody Doctor doctor){
@@ -67,7 +69,6 @@ public class SystemUserController {
         if(patient2!=null||user!=null){
             return new ResponseResult(300,"该账号已注册");
         }
-
         patientService.insert(patient);
         userService.insert(patient.getUsername(),patient.getPassword(),"patient",patient.getName());
         return new ResponseResult(200,"注册成功！",patient);

@@ -15,4 +15,5 @@ public interface DoctorService {
     public Properties getproperties(String name);
 
     List<DoctorProperties> findAll2();
+    Doctor findByUsername(String username);
 }

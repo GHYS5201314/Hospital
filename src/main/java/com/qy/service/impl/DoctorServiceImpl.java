@@ -54,4 +54,9 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorProperties;
     }
 
+    @Override
+    public Doctor findByUsername(String username) {
+        return doctorMapper.findByUsername(username);
+    }
+
 }

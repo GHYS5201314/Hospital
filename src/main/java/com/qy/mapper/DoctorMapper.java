@@ -5,6 +5,7 @@ import com.qy.domain.DoctorProperties;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import javax.print.Doc;
 import java.util.List;
 import java.util.Properties;
 
@@ -19,4 +20,5 @@ public interface DoctorMapper {
 
     List<DoctorProperties> findAll2();
     Properties getProperties(String name);
+    Doctor findByUsername(String username);
 }

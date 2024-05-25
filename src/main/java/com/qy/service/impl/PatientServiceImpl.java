@@ -22,4 +22,9 @@ public class PatientServiceImpl implements PatientService {
         Patient patient = patientMapper.findByName(name);
         return patient;
     }
+
+    @Override
+    public Patient findByUsername(String username) {
+        return patientMapper.findByUsername(username);
+    }
 }

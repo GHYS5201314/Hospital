@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface PatientMapper {
     Integer insert(Patient patient);
     Patient findByName(String name);
+    Patient findByUsername(String username);
 }
