@@ -2,6 +2,7 @@ package com.qy.service.impl;
 
 import com.qy.domain.Doctor;
 import com.qy.domain.DoctorProperties;
+import com.qy.domain.DoctorSchedule;
 import com.qy.domain.ResponseResult;
 import com.qy.mapper.DoctorMapper;
 import com.qy.service.DoctorService;
@@ -57,6 +58,36 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Doctor findByUsername(String username) {
         return doctorMapper.findByUsername(username);
+    }
+
+    @Override
+    public void addSchedule(DoctorSchedule doctorSchedule) {
+        doctorMapper.addSchedule(doctorSchedule);
+    }
+
+    @Override
+    public void deleteSchedule(DoctorSchedule doctorSchedule) {
+        doctorMapper.deleteSchedule(doctorSchedule);
+    }
+
+    @Override
+    public List<DoctorSchedule> findAllSchedule() {
+        return doctorMapper.findAllSchedule();
+    }
+
+    @Override
+    public void updateschedule(DoctorSchedule doctorSchedule) {
+        doctorMapper.updateschedule(doctorSchedule);
+    }
+
+    @Override
+    public DoctorSchedule findDoctorScheduleByNameAndKind(String name, String kind) {
+        return doctorMapper.findDoctorScheduleByNameAndKind(name,kind);
+    }
+
+    @Override
+    public void updateDoctorStatus(String status, String name) {
+        doctorMapper.updateDoctorStatus(status,name);
     }
 
 }

@@ -2,6 +2,7 @@ package com.qy.mapper;
 
 import com.qy.domain.Doctor;
 import com.qy.domain.DoctorProperties;
+import com.qy.domain.DoctorSchedule;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -21,4 +22,10 @@ public interface DoctorMapper {
     List<DoctorProperties> findAll2();
     Properties getProperties(String name);
     Doctor findByUsername(String username);
+    void addSchedule(DoctorSchedule doctorSchedule);
+    void deleteSchedule(DoctorSchedule doctorSchedule);
+    List<DoctorSchedule> findAllSchedule();
+    void updateschedule(DoctorSchedule doctorSchedule);
+    DoctorSchedule findDoctorScheduleByNameAndKind(String name,String kind);
+    void updateDoctorStatus(String status,String name);
 }

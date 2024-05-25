@@ -39,14 +39,16 @@ public class SystemUserController {
             String token = JwtUtil.createJWT(UUID.randomUUID().toString(), loginuser.getUsername(), null);
             name=loginuser.getName();
             map.put("token",token);
-            map.put("name",name);
         }else{
             return new ResponseResult(300,"用户名或密码或身份错误，请重新登录！");
         }
         if(loginuser.getRole().compareTo("doctor")==0){
+            Doctor doctor3=doctorService.findByUsername(systemuser.getUsername());
+            map.put("user",doctor3);
             return new ResponseResult(100,"登录成功！",map);
         }
         else{
+            Patient patient=patientService.findByUsername(systemuser.getUsername());
             return new ResponseResult(200,"登录成功！",map);
         }
     }

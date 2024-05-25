@@ -8,5 +8,7 @@ public interface PatientService {
 
     Integer insert(Patient patient);
     Patient findByName(String name);
+    void updatePatient(Patient patient);
+
     Patient findByUsername(String username);
 }

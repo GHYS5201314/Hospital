@@ -24,7 +24,14 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient findByUsername(String username) {
-        return patientMapper.findByUsername(username);
+    public void updatePatient(Patient patient) {
+        patientMapper.updatePatient(patient);
     }
+
+    @Override
+    public Patient findByUsername(String username) {
+        return  patientMapper.findByUsername(username);
+    }
+
+
 }
