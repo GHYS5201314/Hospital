@@ -18,8 +18,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/patient")
 public class PatientController {
-
-
     @Autowired
     private PatientService patientService;
     @Autowired
@@ -32,13 +30,13 @@ public class PatientController {
     public ResponseResult Book(@RequestBody Map<String,Object> map){
         Patient patient= (Patient) map.get("patient");
         DoctorSchedule doctorSchedule= (DoctorSchedule) map.get("doctorSchedule");
-        patient.setNumberTime(patient.getNumberTime()+1);
         patientService.updatePatient(patient);
         doctorService.updateDoctorStatus("已预约",doctorSchedule.getName());
         systemUserService.insertbook(patient,doctorSchedule);
         return new ResponseResult(200,"预约成功！");
     }
 
+    @PostMapping("/findAllSchedule")
     List<DoctorSchedule> findAllSchedule(@RequestBody String name)
     {
         Patient patient = patientService.findByName(name);

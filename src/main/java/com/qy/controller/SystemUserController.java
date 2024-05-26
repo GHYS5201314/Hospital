@@ -66,6 +66,7 @@ public class SystemUserController {
     }
     @PostMapping("/patientEnroll")
     public ResponseResult patientEnroll(@RequestBody Patient patient){
+        System.out.println(patient);
         Patient patient2 = patientService.findByName(patient.getName());
         User user = userService.findbyusername(patient.getUsername());
         if(patient2!=null||user!=null){

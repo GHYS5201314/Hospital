@@ -24,6 +24,7 @@ public class DoctorController {
     @RequestMapping("/findAll")
     ResponseResult findAll(){
         List<Doctor> doctors = doctorService.findAll();
+        System.out.println("doctor/findAll");
         String msg;
         if(doctors!=null){
             return new ResponseResult(200,"查找成功",doctors);

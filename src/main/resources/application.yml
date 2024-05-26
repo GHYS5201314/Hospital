@@ -1,9 +1,9 @@
 spring:
   datasource:
     username: root
-    password: hzau.0213
+    password: glxswy
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.120.52.204:3306/hospital?characterEncoding=utf-8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/hospital?characterEncoding=utf-8&serverTimezone=UTC
 server:
   port: 3560
 mybatis:

@@ -16,4 +16,5 @@ public class Patient {
     private Integer numberTime;
     private String username;
     private String password;
+    private String status;
 }
