@@ -5,7 +5,7 @@
         insert into patient values(#{name},#{age},#{sex},0,#{username});
     </insert>
     <insert id="insertpatientdoctor">
-        insert into patientdoctor set patientName=#{patient.get}
+        insert into patientDoctor set patientName=#{patient.get}
     </insert>
     <update id="updatePatient">
         update patient set numberTime=#{numberTime} where name=#{name};

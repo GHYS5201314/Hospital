@@ -2,25 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qy.mapper.DoctorMapper">
     <insert id="doctor1Enroll">
-        insert into Doctor values(#{name},#{age},#{sex},#{department},#{direction},#{position},'未预约',#{username});
+        insert into doctor values(#{name},#{age},#{sex},#{department},#{direction},#{position},'未预约',#{username});
     </insert>
     <insert id="addproperties">
-        insert into doctorproperties values(#{name},null,null,null,null);
+        insert into doctorProperties values(#{name},null,null,null,null);
     </insert>
     <insert id="addSchedule">
-        insert into doctorschedule values(#{name},#{number},#{kind},#{StartTime},#{EndTime})
+        insert into doctorSchedule values(#{name},#{number},#{kind},#{StartTime},#{EndTime})
     </insert>
     <update id="update">
-        update doctorproperties set registerdName=#{registerdName},cost=#{cost},DateStartTime=#{DateStartTime},DateEndTime=#{DateEndTime} where name=#{doctorName};
+        update doctorProperties set registerdName=#{registerdName},cost=#{cost},DateStartTime=#{DateStartTime},DateEndTime=#{DateEndTime} where name=#{doctorName};
     </update>
     <update id="updateschedule">
-        update doctorschedule set number=#{number},kind=#{kind},StartTime=#{StartTime},EndTime=#{EndTime}
+        update doctorSchedule set number=#{number},kind=#{kind},StartTime=#{StartTime},EndTime=#{EndTime}
     </update>
     <update id="updateDoctorStatus">
         update doctor set status=#{status} where name=#{name}
     </update>
     <delete id="deleteSchedule">
-        delete from doctorschedule where name=#{name}
+        delete from doctorSchedule where name=#{name}
     </delete>
     <select id="findAll" resultType="com.qy.domain.Doctor">
         select * from doctor
@@ -29,7 +29,7 @@
         select * from doctor where name=#{name}
     </select>
     <select id="findAll2" resultType="com.qy.domain.DoctorProperties">
-        select * from DoctorProperties
+        select * from doctorProperties
     </select>
     <select id="getProperties" resultType="java.util.Properties">
         select * from doctorProperties where doctorName=#{name}
@@ -38,7 +38,7 @@
         select * from doctor where username=#{username}
     </select>
     <select id="findAllSchedule" resultType="com.qy.domain.DoctorSchedule">
-        select * from doctorschedule
+        select * from doctorSchedule
     </select>
     <select id="findDoctorScheduleByNameAndKind" resultType="com.qy.domain.DoctorSchedule">
         select * from doctorSchedule where name=#{name},kind=#{kind}
