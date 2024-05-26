@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class DoctorProperties {
     private String doctorName; //医生姓名
-    private String registeredName;//挂号名称
+    private String registerdName;//挂号名称
     private int cost;//挂号费用
     @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date DateStartTime;//预计看诊开始时间
